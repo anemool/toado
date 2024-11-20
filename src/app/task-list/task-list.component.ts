@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { TasksService } from '../shared/tasks.service';
 import { Task } from '../model/Task.model';
+import { TaskComponent } from "../shared/task/task.component";
 
 @Component({
   selector: 'app-task-list',
   standalone: true,
-  imports: [],
+  imports: [TaskComponent],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css',
 })
