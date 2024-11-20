@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TaskPriority } from '../../model/TaskPriority.model';
-import { TasksService } from './tasks.service';
+import { TasksService } from '../tasks.service';
 import { Task } from '../../model/Task.model';
 
 @Component({
