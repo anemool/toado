@@ -1,3 +1,24 @@
 <div class="addTaskBox">
-    <!-- I want a  -->
+  <form (ngSubmit)="onAdd()">
+    <p>
+      <label for="task-name">Task Name</label>
+      <input
+        id="task-name"
+        name="task-name"
+        type="text"
+        [(ngModel)]="taskName"
+      />
+      <label for="task-priority">Task Priority</label>
+      <select
+        id="task-priority"
+        name="task-priority"
+        [(ngModel)]="taskPriority.value"
+      >
+        @for (priority of Priorities; track priority.label) {
+        <option>{{ priority.value }}</option>
+        }
+      </select>
+      <button>Add</button>
+    </p>
+  </form>
 </div>
