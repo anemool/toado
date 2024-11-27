@@ -6,7 +6,7 @@
     class="task-container"
     [backgroundColor]="task.taskPriority.backgroundColor"
   >
-    <span>{{ task.taskTitle }}</span>
+    <span><input type="text" placeholder="{{ task.taskTitle }}" /></span>
     <span>{{ task.taskPriority.value }}</span>
     <span class="material-symbols-outlined">delete</span>
   </app-task>

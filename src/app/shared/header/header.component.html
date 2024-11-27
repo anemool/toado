@@ -1,3 +1,4 @@
+@if (loggedIn) {
 <div class="headerDiv">
   <div class="logo">TOADO</div>
   <nav class="nav-links">
@@ -7,3 +8,11 @@
     <a href="#">Profile</a>
   </nav>
 </div>
+}@else {
+<div class="headerDiv">
+  <div class="logo">TOADO</div>
+  <nav class="nav-links">
+    <a href="#">Login</a>
+  </nav>
+</div>
+}
