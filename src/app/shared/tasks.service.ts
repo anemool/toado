@@ -30,7 +30,7 @@ export class TasksService {
   }
   AddTask(taskName: string, taskPriority: TaskPriority) {
     taskPriority = this.editTaskPriority(taskPriority);
-    this.tasks.push(new Task(taskName, { ...taskPriority }));
+    this.tasks.push(new Task(taskName, taskPriority));
   }
   deleteTask(_t2: Task) {
     const index: number = this.tasks.indexOf(_t2);

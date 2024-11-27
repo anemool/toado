@@ -7,21 +7,29 @@
     [backgroundColor]="task.taskPriority.backgroundColor"
   >
     <span (click)="startEdit(task)">
-      @if (task == taskInEditing) {}
+      @if (task == taskInEditing) {
       <input type="text" [(ngModel)]="task.taskTitle" (blur)="saveEdit()" />
+      } @else {
+      {{ task.taskTitle }}
+      }
     </span>
-    <span>
+    <span (click)="startEdit(task)">
+      @if (task == taskInEditing) {
       <select
         name="task-priority"
         id="task-priority"
         (change)="editTaskPriority(task.taskPriority)"
+        [(ngModel)]="task.taskPriority"
       >
         @for (priority of priorities; track $index) {
-        <option [ngValue]="task.taskPriority">
+        <option [ngValue]="priority">
           {{ priority.value }}
         </option>
         }
       </select>
+      } @else {
+      {{ task.taskPriority.value }}
+      }
     </span>
     <span (click)="deleteTask(task)">
       <svg
