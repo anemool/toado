@@ -22,7 +22,7 @@ export class AddTaskComponent {
     backgroundColor: '#9efee9',
   };
   taskName!: string;
-
+  task!: Task;
   onAdd() {
     this.tasksService.AddTask(this.taskName, this.taskPriority);
   }
