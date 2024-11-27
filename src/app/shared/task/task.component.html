@@ -1,5 +1,3 @@
-<div class="task-container">
-  <span>Task Name</span>
-  <span>Task priority</span>
-  <span class="material-symbols-outlined">delete</span>
+<div class="task-container" [ngStyle]="{ 'background-color': backgroundColor }">
+  <ng-content></ng-content>
 </div>

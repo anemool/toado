@@ -1,6 +1,16 @@
 @if (tasks.length > 0) {
 <p>
-  <app-task></app-task>
+  @for (task of tasks; track $index) {
+
+  <app-task
+    class="task-container"
+    [backgroundColor]="task.taskPriority.backgroundColor"
+  >
+    <span>{{ task.taskTitle }}</span>
+    <span>{{ task.taskPriority.value }}</span>
+    <span class="material-symbols-outlined">delete</span>
+  </app-task>
+  }
 </p>
 }@else {
 <p>You don't have any tasks, jump in and create a task</p>

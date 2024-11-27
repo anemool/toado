@@ -14,8 +14,8 @@
         name="task-priority"
         [(ngModel)]="taskPriority.value"
       >
-        @for (priority of Priorities; track priority.label) {
-        <option>{{ priority.value }}</option>
+        @for (priority of priorities; track priority.value; ) {
+        <option [ngValue]="priority.value">{{ priority.value }}</option>
         }
       </select>
       <button>Add</button>
