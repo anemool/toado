@@ -15,7 +15,6 @@ export class LoginComponent {
   password: string = '';
   onLogin() {
     if (this.username === 'a' && this.password === 'a') {
-      alert('Login successful!');
       this.router.navigate(['/tasks']);
     } else {
       alert('Invalid username or password');
