@@ -21,4 +21,9 @@ export class LoginComponent {
       alert('Wrong login credentials');
     }
   }
+  ngOnInit() {
+    if (this.loginService.isLoggedIn()) {
+      this.router.navigate(['/tasks']);
+    }
+  }
 }
