@@ -1,7 +1,7 @@
 import { Component, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'stream';
+import { LoginService } from '../shared/login.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -10,14 +10,15 @@ import { EventEmitter } from 'stream';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loginService: LoginService) {}
   username: string = '';
   password: string = '';
   onLogin() {
-    if (this.username === 'a' && this.password === 'a') {
+    this.loginService.logIn(this.username, this.password);
+    if (this.loginService.isLoggedIn()) {
       this.router.navigate(['/tasks']);
     } else {
-      alert('Invalid username or password');
+      alert('Wrong login credentials');
     }
   }
 }

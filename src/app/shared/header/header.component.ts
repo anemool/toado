@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  loggedIn: boolean = true;
+  loggedIn: boolean = false;
+  constructor(private loginService: LoginService) {}
+
+  ngOnInit() {
+    this.loginService.loggedIn$.subscribe((status) => (this.loggedIn = status));
+  }
 }

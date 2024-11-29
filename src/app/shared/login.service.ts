@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -14,11 +14,12 @@ export class LoginService {
   logIn(username: string, password: string) {
     if (username === 'a' && password === 'a') {
       this.loggedIn.next(true);
-    } else {
-      alert('Invalid username or password');
     }
   }
   logOut() {
     this.loggedIn.next(false);
+  }
+  isLoggedIn(): boolean {
+    return this.loggedIn.value;
   }
 }
