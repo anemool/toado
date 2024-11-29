@@ -8,7 +8,7 @@
   >
     <span (click)="startEdit(task)">
       @if (task == taskInEditing) {
-      <input type="text" [(ngModel)]="task.taskTitle" (blur)="saveEdit()" />
+      <input class="task-title" type="text" [(ngModel)]="task.taskTitle" (blur)="saveEdit()" />
       } @else {
       {{ task.taskTitle }}
       }
@@ -16,6 +16,7 @@
     <span (click)="startEdit(task)">
       @if (task == taskInEditing) {
       <select
+        class="drop-down"
         name="task-priority"
         id="task-priority"
         (change)="editTaskPriority(task.taskPriority)"
